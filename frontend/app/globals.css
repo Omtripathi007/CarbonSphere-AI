@@ -1,0 +1,59 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #10b981;
+  --color-secondary: #0ea5e9;
+  --color-accent: #f59e0b;
+  --color-muted: #4b5563;
+
+  --background-image-eco-gradient: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent),
+    radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.1), transparent);
+}
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 2, 43, 33;
+  --background-end-rgb: 0, 0, 0;
+
+  --primary: #10b981;
+  --primary-foreground: #ffffff;
+  --secondary: #0ea5e9;
+  --accent: #f59e0b;
+  --muted: #4b5563;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  min-height: 100vh;
+}
+
+@utility glass-card {
+  background: var(--card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+@utility text-gradient {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-sky-500;
+}
+
+@utility btn-primary {
+  @apply px-6 py-3 rounded-full bg-emerald-500 hover:bg-emerald-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg shadow-emerald-500/20;
+}
+
+@utility btn-secondary {
+  @apply px-6 py-3 rounded-full bg-sky-500 hover:bg-sky-600 transition-all duration-300 transform hover:scale-105 font-semibold shadow-lg shadow-sky-500/20;
+}
+
+@utility eco-gradient {
+  background: radial-gradient(circle at top right, rgba(16, 185, 129, 0.1), transparent),
+    radial-gradient(circle at bottom left, rgba(14, 165, 233, 0.1), transparent);
+}
